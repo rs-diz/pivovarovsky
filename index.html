@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow" data-publish>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>КСК «Пивоваровский» – конно-спортивный комплекс под Иркутском</title>
+<meta name="description" content="Конно-спортивный комплекс «Пивоваровский» в с. Пивовариха под Иркутском: прокат, иппотерапия, спортивное отделение, экскурсии и фотосессии. Бесплатное пробное занятие.">
+<link rel="icon" href="assets/logo-dark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@400;500&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F4F4;
+  --brown:#4F453C;
+  --brown-2:#3F372F;
+  --milk:#F4F0EC;
+  --line:rgba(79,69,60,.55);
+  --line-light:rgba(244,240,236,.7);
+  --muted:#6F655C;
+  --serif:"Cormorant Unicase",Georgia,serif;
+  --sans:"Manrope",Arial,sans-serif;
+  --w:1200px;
+  --pad:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--brown);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.wrap{max-width:calc(var(--w) + var(--pad)*2);margin:0 auto;padding:0 var(--pad)}
+.h2{font-family:var(--serif);font-weight:500;text-transform:uppercase;font-size:clamp(38px,4.2vw,64px);line-height:1;letter-spacing:-.005em}
+
+/* ---------- header ---------- */
+.header{padding-top:52px}
+.header__row{display:grid;grid-template-columns:1fr 304px 304px auto;align-items:center;gap:24px;padding-bottom:14px;border-bottom:1px solid var(--brown)}
+.logo{display:inline-flex;flex-direction:column;align-items:center;gap:4px}
+.logo img{width:54px;height:54px}
+.logo span{font-family:var(--serif);font-size:24px;line-height:1;letter-spacing:.01em}
+.header__info{font-size:14px;line-height:1.5;color:var(--muted)}
+.header__info a:hover{color:var(--brown)}
+.menu-btn{background:none;border:0;cursor:pointer;display:flex;align-items:center;gap:6px;font-size:14px;padding:6px 0;position:relative}
+.menu-btn::before{content:"";width:36px;height:6px;border-top:1px solid var(--brown);border-bottom:1px solid var(--brown)}
+.menu-btn::after{content:"";position:absolute;left:0;right:0;bottom:0;border-bottom:1px solid var(--brown)}
+
+.nav{position:fixed;inset:0;z-index:50;background:var(--brown);color:var(--milk);display:flex;flex-direction:column;justify-content:center;padding:40px var(--pad);opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+.nav.open{opacity:1;visibility:visible}
+.nav__close{position:absolute;top:40px;right:max(var(--pad),calc((100vw - var(--w))/2));background:none;border:0;color:var(--milk);font-size:14px;cursor:pointer;padding:8px 0;border-bottom:1px solid var(--milk)}
+.nav ul{list-style:none;max-width:var(--w);width:100%;margin:0 auto}
+.nav li a{display:block;font-family:var(--serif);font-size:clamp(34px,5vw,64px);line-height:1.25;text-transform:uppercase;transition:padding .3s}
+.nav li a:hover{padding-left:16px}
+.nav__contacts{max-width:var(--w);width:100%;margin:40px auto 0;font-size:15px;opacity:.85}
+
+/* ---------- hero ---------- */
+.hero{text-align:center;padding-top:60px}
+.hero__lead{font-size:22px;font-weight:300;margin-bottom:6px}
+.hero__title{font-family:var(--serif);font-weight:500;text-transform:uppercase;font-size:clamp(34px,4.6vw,72px);line-height:1;position:relative;z-index:1}
+.hero__photo{width:min(683px,100%);height:auto;aspect-ratio:683/358;object-fit:cover;margin:-20px auto 0;position:relative;z-index:2}
+
+/* ---------- about ---------- */
+.about{padding-top:130px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.stats{position:relative;min-height:760px}
+.stat{position:absolute;width:286px;text-align:center}
+.stat__circle{width:286px;height:286px;border:1.5px solid var(--brown);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:64px;margin-bottom:22px}
+.stat p{font-size:16px;color:var(--muted);max-width:310px;margin:0 auto}
+.stat--1{left:0;top:0}
+.stat--2{left:212px;top:380px}
+.stat--2 p{max-width:180px}
+.about__text{padding-top:4px}
+.about__text p{max-width:470px;margin:66px 0 0 106px;color:var(--muted)}
+.round-btn{display:grid;place-items:center;align-content:center;gap:12px;width:198px;height:198px;border-radius:50%;background:var(--brown);color:var(--milk);font-family:var(--serif);font-size:19px;line-height:1.2;text-transform:uppercase;text-align:center;margin:50px 0 0 106px;transition:background .3s}
+.round-btn:hover{background:var(--brown-2)}
+.round-btn svg{width:18px;transition:transform .3s}
+.round-btn:hover svg{transform:translateY(4px)}
+
+/* ---------- services ---------- */
+.services{padding-top:120px;padding-bottom:120px}
+.services__head{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:58px}
+.services__head p{font-size:24px;font-weight:300;line-height:1.5;max-width:560px;padding-top:120px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:40px 20px}
+.card{position:relative;aspect-ratio:285/300;border:1px solid var(--line);border-radius:8px;padding:24px 24px 20px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;isolation:isolate;transition:background .3s,color .3s}
+.card h3{font-family:var(--serif);font-weight:500;font-size:24px;line-height:1.25;text-transform:uppercase}
+.card__more{display:flex;justify-content:space-between;align-items:center;font-family:var(--serif);font-size:24px;text-transform:uppercase}
+.card__more svg{width:24px;transition:transform .3s}
+.card:hover .card__more svg{transform:translate(3px,-3px)}
+.card:not(.card--photo):hover{background:var(--brown);color:var(--milk);border-color:var(--brown)}
+.card--photo{color:var(--milk);border-color:transparent}
+.card--photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .6s}
+.card--photo::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(30,25,20,.45),rgba(30,25,20,.05) 45%,rgba(30,25,20,.5))}
+.card--photo:hover img{transform:scale(1.04)}
+.card--bw img{filter:grayscale(1)}
+
+/* ---------- why ---------- */
+.why{background:var(--brown);color:var(--milk);padding:110px 0 86px}
+.why__grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.why__left{display:flex;flex-direction:column;justify-content:space-between;gap:40px}
+.why .h2{font-size:clamp(38px,4.4vw,70px);line-height:1.08;position:sticky;top:40px}
+.pill{display:flex;align-items:center;justify-content:center;gap:34px;height:66px;border-radius:40px;background:#ECEBEA;color:var(--brown);font-family:var(--serif);font-size:24px;text-transform:uppercase;transition:background .3s}
+.pill:hover{background:#fff}
+.pill svg{width:28px;transition:transform .3s}
+.pill:hover svg{transform:translateX(5px)}
+.reasons{list-style:none;display:grid;gap:12px}
+.reason{border:1px solid var(--line-light);border-radius:4px;padding:22px 20px 24px;display:grid;grid-template-columns:1fr auto;gap:8px 24px;transition:background .3s,color .3s}
+.reason h3{font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.35;text-transform:uppercase}
+.reason p{font-size:16px;line-height:1.5;grid-column:1;max-width:500px;opacity:.92}
+.reason span{grid-column:2;grid-row:1/3;font-family:var(--serif);font-size:34px;line-height:1;opacity:.55}
+.reason:hover{background:var(--bg);color:var(--brown)}
+
+/* ---------- team ---------- */
+.team{padding-top:120px;padding-bottom:110px}
+.team__row{display:grid;grid-template-columns:170px repeat(4,1fr);gap:20px;align-items:center;margin-top:40px}
+.team__hint{font-size:16px;color:var(--muted);text-transform:uppercase;line-height:1.2}
+.coach{position:relative;aspect-ratio:240/430;border-radius:999px;overflow:hidden}
+.coach img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.coach:hover img{transform:scale(1.04)}
+.coach figcaption{position:absolute;left:0;right:0;bottom:24%;padding:0 14%;color:#fff;font-size:16px;line-height:1.3;text-shadow:0 1px 8px rgba(0,0,0,.55)}
+
+/* ---------- news ---------- */
+.news{padding-bottom:120px}
+.news .h2{margin-bottom:26px}
+.news__track{display:flex;gap:20px;align-items:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 var(--pad);scroll-padding:0 var(--pad)}
+.news__track::-webkit-scrollbar{display:none}
+.post{flex:0 0 auto;scroll-snap-align:start;font-size:16px;color:var(--muted);line-height:1.45}
+.post img{object-fit:cover;margin-bottom:16px;width:100%}
+.post--a{width:284px}.post--a img{height:207px}
+.post--b{width:386px}.post--b img{height:336px}
+.post--c{width:182px}.post--c img{height:219px}
+.post--d{width:183px}.post--d img{height:167px}
+.post--e{width:290px}.post--e img{height:310px}
+.post--f{width:180px}.post--f img{height:317px}
+.post__cover{position:relative;margin-bottom:16px}
+.post__cover img{margin:0}
+.post__cover h3{position:absolute;inset:22px 8px auto 8px;font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.15;color:var(--milk);text-transform:uppercase}
+.post time{display:block;margin-top:2px}
+.post u{text-underline-offset:3px}
+.news__arrows{display:flex;gap:24px;justify-content:flex-end;margin-top:26px}
+.arrow{background:none;border:0;cursor:pointer;padding:6px}
+.arrow svg{width:30px;display:block}
+.arrow:disabled{opacity:.3;cursor:default}
+
+/* ---------- years ---------- */
+.years{position:relative;height:640px;margin-bottom:60px}
+.years__title{position:absolute;left:0;right:0;top:220px;text-align:center;z-index:1}
+.years__title small{display:block;font-family:var(--serif);font-size:24px;text-transform:uppercase;margin-bottom:6px}
+.years__title strong{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(56px,7.6vw,116px);line-height:.95;text-transform:uppercase}
+.year{position:absolute;border:1.5px solid var(--brown);border-radius:50%;display:grid;place-items:center;font-size:22px;z-index:2;background:var(--bg)}
+.year--dark{background:var(--brown);color:var(--milk);line-height:1.1;text-align:center}
+.y15{width:156px;height:156px;left:6%;top:130px}
+.y18{width:150px;height:150px;left:48%;top:0}
+.y20{width:152px;height:152px;left:78%;top:60px}
+.y23{width:152px;height:152px;left:92%;top:230px}
+.y21{width:150px;height:150px;left:74%;top:480px}
+.y13{width:166px;height:166px;left:7%;top:470px}
+.y16{width:154px;height:154px;left:38%;top:460px}
+.y12{width:130px;height:130px;left:52%;top:470px}
+
+/* ---------- atmosphere ---------- */
+.atm{padding-bottom:130px}
+.atm .h2{font-size:clamp(34px,3.6vw,60px);line-height:1.05}
+@media (min-width:1101px){.atm .h2 span{white-space:nowrap}}
+.atm .h2 span{display:block;padding-left:min(236px,15vw)}
+.atm .h2 i{font-style:normal;display:inline-block;width:64px;height:1px;background:currentColor;vertical-align:middle;margin-left:20px}
+.gallery{display:flex;gap:20px;align-items:center;justify-content:center;margin-top:44px;overflow:hidden}
+.gallery img{flex:0 0 auto;object-fit:cover}
+.g1{width:282px;height:250px}.g2{width:285px;height:346px}.g3{width:386px;height:494px}.g4{width:285px;height:358px}.g5{width:282px;height:250px}
+
+/* ---------- contacts ---------- */
+.contacts{background:var(--brown);color:var(--milk);padding-top:104px}
+.contacts__grid{display:grid;grid-template-columns:610px 1fr;gap:24px}
+.contacts .h2{margin-bottom:46px}
+.contacts__lead{font-size:16px;max-width:330px;margin-bottom:38px}
+.field{display:block;border-bottom:1px solid var(--line-light);margin-bottom:22px}
+.field input{width:100%;background:none;border:0;padding:12px 0 14px;font-size:16px;color:var(--milk)}
+.field input::placeholder{color:var(--milk);opacity:.9}
+.field input:focus{outline:none}
+.field:focus-within{border-color:var(--milk)}
+.send{display:flex;justify-content:space-between;align-items:center;width:100%;background:none;border:0;cursor:pointer;font-family:var(--serif);font-size:20px;text-transform:uppercase;padding:14px 0 0;color:var(--milk)}
+.send span{text-decoration:underline;text-underline-offset:4px}
+.send svg{width:12px}
+.form-note{font-size:14px;opacity:.8;margin-top:14px;min-height:21px}
+.foot-nav{list-style:none;justify-self:end;width:min(385px,100%);padding-top:120px}
+.foot-nav a{display:block;padding:12px 0 18px;border-bottom:1px solid var(--line-light);font-size:16px;transition:padding .3s}
+.foot-nav a:hover{padding-left:10px}
+.footer{margin-top:150px;border-top:1px solid var(--line-light);display:grid;grid-template-columns:1fr 1fr}
+.footer__l{border-right:1px solid var(--line-light);padding:28px 24px 100px 0}
+.footer__brand{display:flex;align-items:center;gap:32px}
+.footer__brand img{width:72px}
+.footer__brand span{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.05;text-transform:uppercase}
+.footer__meta{margin-top:70px;font-size:16px;line-height:1.8}
+.footer__meta a{text-decoration:underline;text-underline-offset:3px}
+.footer__meta b{font-weight:400;margin-right:18px}
+.footer__r{padding:46px 0 60px 114px}
+.footer__r h3{font-weight:400;font-size:26px;text-transform:uppercase;margin-bottom:20px}
+.sub{display:flex;align-items:flex-end;gap:16px;border-bottom:1px solid var(--line-light)}
+.sub input{flex:1;min-width:0;background:none;border:0;font-size:24px;padding:10px 0 6px;color:var(--milk)}
+.sub input::placeholder{color:var(--milk)}
+.sub input:focus{outline:none}
+.sub button{background:#F4EFEF;color:var(--brown);border:0;cursor:pointer;padding:9px 48px;font-size:16px;margin-bottom:16px;transition:background .3s}
+.sub button:hover{background:#fff}
+.socials{display:flex;flex-wrap:wrap;gap:16px 28px;margin-top:44px;font-size:24px;font-weight:500;text-transform:uppercase}
+.socials a::before{content:"{\00a0";font-weight:300;font-size:30px}
+.socials a::after{content:"\00a0}";font-weight:300;font-size:30px}
+.socials a:hover{opacity:.75}
+
+/* ---------- motion ---------- */
+@media (prefers-reduced-motion:no-preference){
+  .hero__lead,.hero__title,.hero__photo{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
+  .hero__title{animation-delay:.12s}
+  .hero__photo{animation-delay:.3s}
+  @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* ---------- responsive ---------- */
+@media (max-width:1100px){
+  .header__row{grid-template-columns:1fr auto auto;}
+  .header__info--time{display:none}
+  .about{grid-template-columns:1fr}
+  .about__text{order:-1}
+  .about__text p,.round-btn{margin-left:0}
+  .stats{min-height:0;display:flex;gap:24px;justify-content:center;margin-top:70px}
+  .stat{position:static}
+  .services__head{grid-template-columns:1fr}
+  .services__head p{padding-top:0}
+  .cards{grid-template-columns:repeat(2,1fr);gap:20px}
+  .why__grid{grid-template-columns:1fr}
+  .why .h2{position:static}
+  .why__left{order:0}
+  .pill{order:2}
+  .team__row{grid-template-columns:repeat(4,1fr)}
+  .team__hint{grid-column:1/-1}
+  .years{height:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+  .years__title{position:static;width:100%;margin-bottom:24px}
+  .year{position:static;width:112px!important;height:112px!important;font-size:18px}
+  .gallery{justify-content:flex-start;overflow-x:auto;scrollbar-width:none;padding:0 var(--pad)}
+  .contacts__grid{grid-template-columns:1fr}
+  .foot-nav{justify-self:start;padding-top:40px}
+  .footer{grid-template-columns:1fr}
+  .footer__l{border-right:0;border-bottom:1px solid var(--line-light);padding-bottom:40px}
+  .footer__r{padding:40px 0 60px}
+}
+@media (max-width:640px){
+  :root{--pad:16px}
+  .header{padding-top:24px}
+  .header__row{grid-template-columns:1fr auto;gap:12px}
+  .header__info--addr{display:none}
+  .logo img{width:44px;height:44px}
+  .logo span{font-size:20px}
+  .hero{padding-top:40px}
+  .hero__lead{font-size:17px}
+  .hero__title{font-size:clamp(25px,8vw,40px)}
+  .hero__photo{margin-top:-8px}
+  .about{padding-top:80px}
+  .about__text p{margin-top:28px}
+  .round-btn{width:150px;height:150px;font-size:16px;margin-top:32px}
+  .stats{flex-direction:column;align-items:center;gap:40px}
+  .stat,.stat__circle{width:220px}
+  .stat__circle{height:220px;font-size:52px}
+  .services{padding-top:80px;padding-bottom:80px}
+  .services__head p{font-size:19px}
+  .cards{grid-template-columns:1fr 1fr;gap:12px}
+  .card{padding:14px 12px;aspect-ratio:auto;min-height:200px}
+  .card h3{font-size:17px}
+  .card__more{font-size:16px}
+  .card__more svg{width:18px}
+  .why{padding:80px 0 60px}
+  .reason{padding:18px 16px}
+  .reason h3{font-size:19px}
+  .reason p{font-size:15px}
+  .reason span{font-size:26px}
+  .pill{font-size:19px;gap:20px}
+  .team{padding-top:80px;padding-bottom:80px}
+  .team__row{grid-template-columns:1fr 1fr;gap:14px}
+  .coach figcaption{font-size:14px;padding:0 12%}
+  .news{padding-bottom:80px}
+  .post--b{width:300px}.post--b img{height:260px}
+  .post__cover h3{font-size:24px}
+  .years__title small{font-size:18px}
+  .year{width:88px!important;height:88px!important;font-size:16px}
+  .atm{padding-bottom:80px}
+  .atm .h2 span{padding-left:0}
+  .atm .h2 i{display:none}
+  .g1,.g5{width:220px;height:196px}.g2,.g4{width:220px;height:268px}.g3{width:260px;height:332px}
+  .contacts{padding-top:70px}
+  .footer{margin-top:80px}
+  .footer__brand{gap:18px}
+  .footer__brand img{width:56px}
+  .footer__brand span{font-size:20px}
+  .footer__meta{margin-top:36px}
+  .footer__r h3{font-size:20px}
+  .sub{flex-wrap:wrap}
+  .sub input{font-size:19px;flex-basis:100%}
+  .sub button{width:100%;margin:0 0 12px}
+  .socials{font-size:18px;gap:12px 16px}
+}
+</style>
+</head>
+<body>
+
+<header class="header wrap">
+  <div class="header__row">
+    <a class="logo" href="#top" aria-label="КСК «Пивоваровский» – наверх">
+      <img src="assets/logo-dark.png" alt="" width="54" height="54">
+      <span>пивоваровский</span>
+    </a>
+    <div class="header__info header__info--addr">
+      г.&nbsp;Иркутск: с.&nbsp;Пивовариха<br>
+      <a href="tel:+79149267171">+7&nbsp;(914)&nbsp;926-71-71</a>
+    </div>
+    <div class="header__info header__info--time">
+      Время работы<br>
+      Ежедневно с&nbsp;9:00 – 18:00
+    </div>
+    <button class="menu-btn" type="button" aria-controls="nav" aria-expanded="false">Меню</button>
+  </div>
+</header>
+
+<nav class="nav" id="nav" aria-label="Меню сайта">
+  <button class="nav__close" type="button">Закрыть</button>
+  <ul>
+    <li><a href="#about">О&nbsp;нас</a></li>
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#team">Команда</a></li>
+    <li><a href="#news">Новости</a></li>
+    <li><a href="#photo">Фото</a></li>
+    <li><a href="#contacts">Контакты</a></li>
+  </ul>
+  <p class="nav__contacts">с.&nbsp;Пивовариха, ул.&nbsp;Степная,&nbsp;37 · <a href="tel:+79149267171">+7&nbsp;(914)&nbsp;926-71-71</a> · ежедневно 9:00 – 18:00</p>
+</nav>
+
+<main id="top">
+
+<section class="hero wrap">
+  <p class="hero__lead">Для нас это не&nbsp;работа, а&nbsp;образ жизни!</p>
+  <h1 class="hero__title">«Пивоваровский»<br>конно-спортивный<br>комплекс</h1>
+  <img class="hero__photo" src="assets/hero.jpg" alt="Всадница на серой лошади в манеже комплекса" width="683" height="358">
+</section>
+
+<section class="about wrap" id="about">
+  <div class="stats">
+    <div class="stat stat--1">
+      <div class="stat__circle">7+</div>
+      <p>Лет мы выступаем на&nbsp;межрегиональных, всероссийских и&nbsp;международных соревнованиях</p>
+    </div>
+    <div class="stat stat--2">
+      <div class="stat__circle">70+</div>
+      <p>Воспитанников стали всемирно известными спортсменами</p>
+    </div>
+  </div>
+  <div class="about__text">
+    <h2 class="h2">Немного о<br>нашем клубе</h2>
+    <p>Своё становление комплекс начал в&nbsp;2010&nbsp;году. За&nbsp;это время было освоено, разработано и&nbsp;внедрено множество методик и&nbsp;практик, но&nbsp;самое главное&nbsp;- обрели любимое дело, которое стало образом жизни для нас и&nbsp;учеников нашего конно-спортивного комплекса.</p>
+    <a class="round-btn" href="#services">Узнать<br>больше
+      <svg viewBox="0 0 18 30" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M9 0v28M1 20l8 8 8-8"/></svg>
+    </a>
+  </div>
+</section>
+
+<section class="services wrap" id="services">
+  <div class="services__head">
+    <h2 class="h2">Что мы вам<br>предлагаем</h2>
+    <p>Катание на&nbsp;лошадях и&nbsp;красивые пейзажи вокруг помогут отвлечься от&nbsp;повседневной рутины и&nbsp;отдохнуть душой и&nbsp;телом</p>
+  </div>
+  <div class="cards">
+    <a class="card" href="#contacts" data-topic="Прокатное отделение">
+      <h3>Прокатное отделение</h3>
+      <span class="card__more">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M2 22 22 2M8 2h14v14"/></svg></span>
+    </a>
+    <a class="card" href="#contacts" data-topic="Иппотерапия">
+      <h3>Иппотерапия (развивающая верховая езда)</h3>
+      <span class="card__more">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M2 22 22 2M8 2h14v14"/></svg></span>
+    </a>
+    <a class="card" href="#contacts" data-topic="Спортивное отделение">
+      <h3>Спортивное отделение</h3>
+      <span class="card__more">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M2 22 22 2M8 2h14v14"/></svg></span>
+    </a>
+    <a class="card card--photo card--bw" href="#contacts" data-topic="Экскурсии и фотосессии">
+      <img src="assets/service-tours.jpg" alt="" loading="lazy">
+      <h3>Экскурсии и&nbsp;фотосессии</h3>
+      <span class="card__more">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M2 22 22 2M8 2h14v14"/></svg></span>
+    </a>
+    <a class="card card--photo" href="#contacts" data-topic="Берейторство">
+      <img src="assets/service-bereitor.jpg" alt="" loading="lazy">
+      <h3>Берейторство</h3>
+      <span class="card__more">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M2 22 22 2M8 2h14v14"/></svg></span>
+    </a>
+    <a class="card" href="#contacts" data-topic="Организация поздравительных мероприятий">
+      <h3>Организация поздравительных мероприятий</h3>
+      <span class="card__more">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M2 22 22 2M8 2h14v14"/></svg></span>
+    </a>
+    <a class="card card--photo" href="#contacts" data-topic="Бесплатное пробное занятие">
+      <img src="assets/service-trial.jpg" alt="" loading="lazy">
+      <h3>Бесплатное пробное занятие</h3>
+      <span class="card__more">Записаться <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M2 22 22 2M8 2h14v14"/></svg></span>
+    </a>
+    <a class="card" href="#contacts" data-topic="Всё для коневладельцев">
+      <h3>Всё для коневладельцев</h3>
+      <span class="card__more">Подробнее <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M2 22 22 2M8 2h14v14"/></svg></span>
+    </a>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap why__grid">
+    <div class="why__left">
+      <h2 class="h2">Почему нас выбирают среди множества других клубов</h2>
+      <a class="pill" href="#contacts" data-topic="Бесплатное пробное занятие">Бесплатное занятие
+        <svg viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 7h26M20 1l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <ul class="reasons">
+      <li class="reason"><h3>Удобное местоположение</h3><p>Комплекс расположен в&nbsp;прекрасном месте за&nbsp;городом, но&nbsp;в&nbsp;то&nbsp;же время недалеко от&nbsp;Иркутска&nbsp;- в&nbsp;с.&nbsp;Пивовариха</p><span>/01</span></li>
+      <li class="reason"><h3>Команда опытных специалистов</h3><p>Настоящие мастера своего дела помогут Вам достичь превосходных результатов</p><span>/02</span></li>
+      <li class="reason"><h3>Безопасность катания</h3><p>Наши лошади хорошо выезжены, а&nbsp;это залог безопасности всех посетителей конного центра</p><span>/03</span></li>
+      <li class="reason"><h3>Для всей семьи</h3><p>Приглашаем детей, любителей, спортсменов. Уникальные программы от&nbsp;первого занятия до&nbsp;спортивных наград</p><span>/04</span></li>
+      <li class="reason"><h3>Многообразие видов конного спорта</h3><p>Конкур, выездка, троеборье, стрельба из&nbsp;лука, любительская верховая езда, хоббихорсинг&nbsp;- и&nbsp;каждый раз мы развиваем что-то новое, возможно, уже завтра мы откроем для себя новую дисциплину</p><span>/05</span></li>
+      <li class="reason"><h3>Наличие крытого манежа и&nbsp;открытого плаца</h3><p>Стационарный для тренировок и&nbsp;рабочий для соревнований и&nbsp;прочих мероприятий</p><span>/06</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="team wrap" id="team">
+  <h2 class="h2">Наша команда</h2>
+  <div class="team__row">
+    <p class="team__hint">Выберите<br>любимого тренера</p>
+    <figure class="coach"><img src="assets/team-zentsova.jpg" alt="Тренер Зенцова Анна Валентиновна" loading="lazy"><figcaption>Зенцова Анна Валентиновна</figcaption></figure>
+    <figure class="coach"><img src="assets/team-dubrovina.jpg" alt="Тренер Дубровина Мария Николаевна" loading="lazy"><figcaption>Дубровина Мария Николаевна</figcaption></figure>
+    <figure class="coach"><img src="assets/team-prokhorova.jpg" alt="Тренер Прохорова Анастасия Леонидовна" loading="lazy"><figcaption>Прохорова Анастасия Леонидовна</figcaption></figure>
+    <figure class="coach"><img src="assets/team-kachina.jpg" alt="Тренер Качина Анастасия Дмитриевна" loading="lazy"><figcaption>Качина Анастасия Дмитриевна</figcaption></figure>
+  </div>
+</section>
+
+<section class="news" id="news">
+  <div class="wrap"><h2 class="h2">Новости и&nbsp;акции</h2></div>
+  <div class="news__track" tabindex="0" aria-label="Лента новостей, листается вбок">
+    <article class="post post--a">
+      <div class="post__cover"><img src="assets/news-2.jpg" alt="" loading="lazy"><h3>Поздравляем с&nbsp;наступающим Новым годом!</h3></div>
+      <p><u>С&nbsp;31&nbsp;декабря по&nbsp;2&nbsp;января КСК не&nbsp;работает.</u><br>С&nbsp;3&nbsp;января с&nbsp;радостью ждём Вас в&nbsp;обычном режиме с&nbsp;09:00 до&nbsp;18:00.</p>
+      <time datetime="2023-12-29">29.12.2023</time>
+    </article>
+    <article class="post post--b">
+      <img src="assets/news-3.jpg" alt="Лошади и собаки в новогодних колпаках" loading="lazy">
+      <p>Чудесные мгновения в&nbsp;КСК «Пивоваровский». Приглашаем Вас на&nbsp;празднование Нового года и&nbsp;Рождества 5&nbsp;января в&nbsp;«К’яард Арену» (по&nbsp;адресу: с.&nbsp;Пивовариха, ул.&nbsp;Степная,&nbsp;37) с&nbsp;11:00 до&nbsp;15:00.</p>
+    </article>
+    <article class="post post--c">
+      <img src="assets/news-4.jpg" alt="Занятие в манеже" loading="lazy">
+      <p>Чудесные мгновения в&nbsp;КСК «Пивоваровский». Приглашаем Вас на&nbsp;празднование Нового года и&nbsp;Рождества 5&nbsp;января</p>
+    </article>
+    <article class="post post--d">
+      <img src="assets/news-5.jpg" alt="Всадники на празднике в клубе" loading="lazy">
+      <p>Чудесные мгновения в&nbsp;КСК «Пивоваровский». Приглашаем Вас на&nbsp;празднование Нового года</p>
+    </article>
+    <article class="post post--e">
+      <img src="assets/news-6.jpg" alt="Всадники на открытом плацу" loading="lazy">
+      <p>Чудесные мгновения в&nbsp;КСК «Пивоваровский». Приглашаем Вас на&nbsp;празднование Нового года</p>
+    </article>
+    <article class="post post--f">
+      <img src="assets/news-1.jpg" alt="Всадник на соревнованиях" loading="lazy">
+      <p>Соревнования на&nbsp;открытом поле комплекса</p>
+    </article>
+  </div>
+  <div class="wrap news__arrows">
+    <button class="arrow" type="button" data-dir="-1" aria-label="Предыдущие новости"><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M30 7H2M8 1 2 7l6 6"/></svg></button>
+    <button class="arrow" type="button" data-dir="1" aria-label="Следующие новости"><svg viewBox="0 0 30 14" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M0 7h28M22 1l6 6-6 6"/></svg></button>
+  </div>
+</section>
+
+<section class="wrap" aria-label="Наши достижения">
+  <div class="years">
+    <h2 class="years__title"><small>Наши достижения</small><strong>Растем с<br>каждым годом!</strong></h2>
+    <a class="year year--dark y12" href="#photo">2012<br>↓</a>
+    <span class="year y13">2013</span>
+    <span class="year y15">2015</span>
+    <span class="year y16">2016</span>
+    <span class="year y18">2018</span>
+    <span class="year y20">2020</span>
+    <span class="year y21">2021</span>
+    <span class="year y23">2023</span>
+  </div>
+</section>
+
+<section class="atm" id="photo">
+  <div class="wrap">
+    <h2 class="h2">Атмосфера клуба <i aria-hidden="true"></i><span>атмосфера праздника и&nbsp;победы</span></h2>
+  </div>
+  <div class="gallery">
+    <img class="g1" src="assets/atm-1.jpg" alt="Всадница на серой лошади у препятствия" loading="lazy">
+    <img class="g2" src="assets/atm-2.jpg" alt="Награждение юных спортсменок" loading="lazy">
+    <img class="g3" src="assets/atm-3.jpg" alt="Две всадницы на поле после старта" loading="lazy">
+    <img class="g4" src="assets/atm-4.jpg" alt="Прыжок через препятствие на соревнованиях" loading="lazy">
+    <img class="g5" src="assets/atm-5.jpg" alt="Награждение всадницы на плацу" loading="lazy">
+  </div>
+</section>
+
+</main>
+
+<footer class="contacts" id="contacts">
+  <div class="wrap">
+    <div class="contacts__grid">
+      <div>
+        <h2 class="h2">Наши контакты</h2>
+        <p class="contacts__lead">Введите свои контактные данные, и&nbsp;мы свяжемся с&nbsp;Вами в&nbsp;рабочее время</p>
+        <form class="form" id="lead-form">
+          <input type="hidden" name="topic" value="">
+          <label class="field"><input type="email" name="email" placeholder="Ваша почта" autocomplete="email"></label>
+          <label class="field"><input type="tel" name="phone" placeholder="Ваш телефон" autocomplete="tel" required></label>
+          <label class="field"><input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required></label>
+          <button class="send" type="submit"><span>Отправить</span><svg viewBox="0 0 12 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m2 2 8 8-8 8"/></svg></button>
+          <p class="form-note" aria-live="polite"></p>
+        </form>
+      </div>
+      <ul class="foot-nav">
+        <li><a href="#about">О&nbsp;нас</a></li>
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#team">Команда</a></li>
+        <li><a href="#news">Новости</a></li>
+        <li><a href="#photo">Фото</a></li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <div class="footer__l">
+        <div class="footer__brand">
+          <img src="assets/logo-light.png" alt="" width="72" height="72">
+          <span>«Пивоваровский»<br>конно-спортивный комплекс</span>
+        </div>
+        <p class="footer__meta">
+          <b>© 2026</b><span>Kasimova_design</span><br>
+          <a href="#" id="privacy">Политика конфиденциальности</a>
+        </p>
+      </div>
+      <div class="footer__r">
+        <h3>Подпишитесь на&nbsp;наши новости</h3>
+        <form class="sub" id="sub-form">
+          <input type="email" name="email" placeholder="Ваша почта" aria-label="Ваша почта" required>
+          <button type="submit">Отправить</button>
+        </form>
+        <div class="socials">
+          <a href="https://wa.me/79149267171" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://t.me/+79149267171" target="_blank" rel="noopener">Telegram</a>
+          <a href="tel:+79149267171">Позвонить</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // меню
+  var nav=document.getElementById('nav'),btn=document.querySelector('.menu-btn');
+  function setNav(open){nav.classList.toggle('open',open);btn.setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':'';}
+  btn.addEventListener('click',function(){setNav(true)});
+  nav.querySelector('.nav__close').addEventListener('click',function(){setNav(false)});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setNav(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setNav(false)});
+
+  // тема заявки из карточек услуг
+  var topic=document.querySelector('#lead-form [name=topic]');
+  document.querySelectorAll('[data-topic]').forEach(function(a){a.addEventListener('click',function(){topic.value=a.dataset.topic})});
+
+  // лента новостей
+  var track=document.querySelector('.news__track'),arrows=document.querySelectorAll('.arrow');
+  function upd(){arrows[0].disabled=track.scrollLeft<5;arrows[1].disabled=track.scrollLeft+track.clientWidth>=track.scrollWidth-5;}
+  arrows.forEach(function(b){b.addEventListener('click',function(){track.scrollBy({left:b.dataset.dir*track.clientWidth*.7,behavior:'smooth'})})});
+  track.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
+
+  // заявка уходит в WhatsApp комплекса
+  var WA='79149267171';
+  function sendWA(text){window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(text),'_blank','noopener');}
+  document.getElementById('lead-form').addEventListener('submit',function(e){
+    e.preventDefault();var f=e.target;
+    var t='Здравствуйте! Заявка с сайта.\nИмя: '+f.name.value+'\nТелефон: '+f.phone.value+(f.email.value?'\nПочта: '+f.email.value:'')+(f.topic.value?'\nИнтересует: '+f.topic.value:'');
+    sendWA(t);
+    f.querySelector('.form-note').textContent='Открыли WhatsApp с вашей заявкой – осталось нажать «Отправить».';
+  });
+  document.getElementById('sub-form').addEventListener('submit',function(e){
+    e.preventDefault();sendWA('Здравствуйте! Хочу получать новости клуба. Почта: '+e.target.email.value);
+  });
+  document.getElementById('privacy').addEventListener('click',function(e){e.preventDefault();});
+})();
+</script>
+</body>
+</html>
